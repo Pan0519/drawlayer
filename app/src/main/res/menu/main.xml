@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/action_search"
+        android:title="Search"
+        android:icon="@drawable/search"
+        app:showAsAction="ifRoom"/>
+    <item android:id="@+id/action_notifications"
+        android:title="notifications"
+        android:icon="@drawable/tixing"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/fabu"
+        android:title="发布生活照" />
+    <item
+        android:id="@+id/wode"
+        android:title="我的生活照" />
+    <item
+        android:id="@+id/shoucang"
+        android:title="我的收藏" />
+</menu>
