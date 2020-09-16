@@ -66,26 +66,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //        NavigationUI.setupWithNavController(navigationView, navController);
 
         Toast.makeText(this, "test", Toast.LENGTH_SHORT).show();
-
-//        DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
-//        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        // 用toolbar做為APP的ActionBar
-//        setSupportActionBar(toolbar);
-//
-//        // 將drawerLayout和toolbar整合，會出現「三」按鈕
-//        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this,
-//                drawerLayout, toolbar, R.string.open, R.string.close);
-//        drawerLayout.addDrawerListener(actionBarDrawerToggle);
-//        actionBarDrawerToggle.syncState();
     }
-
-//    @Override
-//    public boolean onSupportNavigateUp() {
-//        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-//        return NavigationUI.navigateUp(navController, mAppBarConfiguration)
-//                || super.onSupportNavigateUp();
-//    }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
