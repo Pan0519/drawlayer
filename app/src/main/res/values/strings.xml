@@ -17,4 +17,8 @@
     <string name="pet_activity">我的宠物活动</string>
     <string name="pet_translation">我的宠物翻译</string>
 
+    <string name="menu_pet_activity">宠物活动</string>
+    <string name="menu_firend">我的好友</string>
+    <string name="menu_pet_translation">宠物翻译</string>
+
 </resources>

@@ -7,14 +7,19 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_act"
-            android:title="宠物活动" />
+            android:title="@string/menu_pet_activity" />
+        <item
+            android:id="@+id/nav_home_second"
+            android:icon="@drawable/ic_fri"
+            android:title="HomeSecond" />
+
         <item
             android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_fri"
-            android:title="我的好友" />
+            android:title="@string/menu_firend" />
         <item
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_tran"
-            android:title="宠物翻译" />
+            android:title="@string/menu_pet_translation" />
     </group>
 </menu>

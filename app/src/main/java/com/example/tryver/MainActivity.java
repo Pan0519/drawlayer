@@ -3,6 +3,7 @@ package com.example.tryver;
 import android.app.Application;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
@@ -29,14 +30,13 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private AppBarConfiguration mAppBarConfiguration;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        System.out.println("test");
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -56,38 +56,36 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        navigationView.bringToFront();
 
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-        mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow).build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
-        NavigationUI.setupWithNavController(navigationView, navController);
+//        mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_home, R.id.nav_home_second, R.id.nav_gallery, R.id.nav_slideshow).build();
+//        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+//        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
+//        NavigationUI.setupWithNavController(navigationView, navController);
 
         Toast.makeText(this, "test", Toast.LENGTH_SHORT).show();
+
+//        DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
+//        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        // 用toolbar做為APP的ActionBar
+//        setSupportActionBar(toolbar);
+//
+//        // 將drawerLayout和toolbar整合，會出現「三」按鈕
+//        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this,
+//                drawerLayout, toolbar, R.string.open, R.string.close);
+//        drawerLayout.addDrawerListener(actionBarDrawerToggle);
+//        actionBarDrawerToggle.syncState();
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        System.out.println(id);
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        return NavigationUI.onNavDestinationSelected(item, navController)
-                || super.onOptionsItemSelected(item);
-    }
 //    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-//        getMenuInflater().inflate(R.menu.main, menu);
-//        return true;
+//    public boolean onSupportNavigateUp() {
+//        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+//        return NavigationUI.navigateUp(navController, mAppBarConfiguration)
+//                || super.onSupportNavigateUp();
 //    }
-
-    @Override
-    public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        return NavigationUI.navigateUp(navController, mAppBarConfiguration)
-                || super.onSupportNavigateUp();
-    }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -97,24 +95,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         //通過id值與menu檔案中item的id匹配
         int id = item.getItemId();
-        Toast.makeText(this,id,Toast.LENGTH_SHORT).show();
+
         switch (id) {
             case R.id.nav_home:
-                Toast.makeText(getApplicationContext(), "Home", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Home", Toast.LENGTH_SHORT).show();
                 return true;
 
             case R.id.nav_gallery:
-                Toast.makeText(getApplicationContext(), "Gallery", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Gallery", Toast.LENGTH_SHORT).show();
                 return true;
 
             case R.id.nav_slideshow:
-                Toast.makeText(getApplicationContext(), "SlideShow", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "SlideShow", Toast.LENGTH_SHORT).show();
                 return true;
 
-            default:
-                Toast.makeText(getApplicationContext(),id,Toast.LENGTH_SHORT).show();
-                return true;
         }
-//        return false;
+        return false;
     }
 }
